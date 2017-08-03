@@ -1,0 +1,111 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ReadLotPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/lot/ReadLotPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+	<div id="sheet">	
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.campagne" /></span>
+			<span class="value" wicket:id="Lot.campagne"></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.station" /></span>
+			<span class="value" wicket:id="Lot.station"></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.dateRecolte" /></span>
+			<span class="value" wicket:id="Lot.dateRecolte"></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.ref" /></span>
+			<span class="value" wicket:id="Lot.ref"></span>
+		</div>
+			
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.specimenRef" /></span>
+			<span class="value" wicket:id="Lot.specimenRef"></span>
+		</div>
+
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.partie" /></span>
+			<span class="value" wicket:id="Lot.partie" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.masseFraiche" /></span>
+			<span class="value" wicket:id="Lot.masseFraiche" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.masseSeche" /></span>
+			<span class="value" wicket:id="Lot.masseSeche" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.echantillonColl" /></span>
+			<span class="value" wicket:id="Lot.echantillonColl" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.echantillonIdent" /></span>
+			<span class="value" wicket:id="Lot.echantillonIdent" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.echantillonPhylo" /></span>
+			<span class="value" wicket:id="Lot.echantillonPhylo" ></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.complement" /></span>
+			<span class="value" wicket:id="Lot.complement"></span>
+		</div>
+		
+		<div class="property">
+			<span class="label"><wicket:message key="Lot.createur" /></span>
+			<span class="value" wicket:id="Lot.createur"></span>
+		</div>
+
+        <wicket:panel wicket:id="ReadListDocumentsPanel" />
+
+		<form wicket:id="Form">
+			<div class="actions">
+				<a class="edit" wicket:id="ReadLotPage.Lot.Update" wicket:message="title:Update">
+					<wicket:message key="Update" />
+				</a>
+				
+				<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+				
+				<a wicket:id="ReadLotPage.Lot.Back" wicket:message="title:Back">
+					<wicket:message key="Back" />
+				</a>
+			</div>
+		</form>
+	</div>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ReadCampagnePage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/campagne/ReadCampagnePage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+	<div id="sheet">
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.nom" /></span>
+			<span class="value" wicket:id="Campagne.nom"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.codePays" /></span>
+			<span class="value" wicket:id="Campagne.codePays"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.dateDeb" /></span>
+			<span class="value" wicket:id="Campagne.dateDeb"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.dateFin" /></span>
+			<span class="value" wicket:id="Campagne.dateFin"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.programme" /></span>
+			<span class="value" wicket:id="Campagne.programme"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.mentionLegale" /><wicket:container wicket:id="Campagne.mentionLegale.info"/></span>
+			<span class="value" wicket:id="Campagne.mentionLegale"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.complement" /></span>
+			<span class="value" wicket:id="Campagne.complement"></span>
+		</div>
+		<div class="property">
+			<span class="label"><wicket:message key="Campagne.createur" /></span>
+			<span wicket:id="Campagne.createur"></span>
+		</div>
+		<fieldset>
+			<legend><wicket:message key="Campagne.participants" /></legend>
+			<table wicket:id="Campagne.participants.Table">
+				<thead>
+					<tr>
+						<th><label for="Campagne.participant"><wicket:message key="Personne" /></label></th>
+						<th><label for="CampagnePersonneParticipant.complement"><wicket:message key="CampagnePersonneParticipant.complement" /></label></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="Campagne.participants.List">
+						<td wicket:id="Campagne.participants.List.personne"/>
+						<td wicket:id="Campagne.participants.List.complement"/>
+					</tr>
+				</tbody>
+			</table>
+			<div class="property" wicket:id="Campagne.participants.NoTable">
+				<span class="label">&nbsp;</span>
+				<span class="value"><wicket:message key="List.none" /></span>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend><wicket:message key="Campagne.stations" /></legend>
+			<table cellspacing="0" wicket:id="Campagne.stations.Table">
+				<thead>
+					<tr>
+						<th><label for="Campagne.station"><wicket:message key="Station" /></label></th>
+						<th><label for="Campagne.Station.codePays"><wicket:message key="Station.codePays" /></label></th>
+						<th><label for="Campagne.Station.localite"><wicket:message key="Station.localite" /></label></th>
+						<th><label for="Campagne.Station.latitude"><wicket:message key="Station.latitude" /></label></th>
+						<th><label for="Campagne.Station.longitude"><wicket:message key="Station.longitude" /></label></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr wicket:id="Campagne.stations.List">
+						<td><span wicket:id="Campagne.stations.List.station" /></td>
+						<td><span wicket:id="Campagne.stations.List.codePays" /></td>
+						<td><span wicket:id="Campagne.stations.List.localite" /></td>
+						<td><span wicket:id="Campagne.stations.List.latitude" /></td>
+						<td><span wicket:id="Campagne.stations.List.longitude" /></td>
+					</tr>
+				</tbody>
+				<tfoot class="highlightFoot" wicket:id="Campagne.stations.stationsNotAccessibles">
+					<tr>
+						<td colspan="5"><span class="info"><wicket:message key="Campagne.stationsNotAccessibles"/></span></td>
+					</tr>
+				</tfoot>
+			</table>
+			<div class="property" wicket:id="Campagne.stations.NoTable">
+				<span class="label">&nbsp;</span>
+				<span class="value"><wicket:message key="List.none" /></span>
+			</div>
+		</fieldset>
+
+        <wicket:panel wicket:id="ReadListDocumentsPanel" />
+
+		<form wicket:id="Form">
+			<div class="actions">
+				<a class="edit" wicket:id="ReadCampagnePage.Campagne.Update" wicket:message="title:Update">
+					<wicket:message key="Update" />
+				</a>
+				<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+				<a wicket:id="ReadCampagnePage.Campagne.Back" wicket:message="title:Back">
+					<wicket:message key="Back" />
+				</a>
+			</div>
+		</form>
+	</div>
+</wicket:extend>
+</body>
+</html>

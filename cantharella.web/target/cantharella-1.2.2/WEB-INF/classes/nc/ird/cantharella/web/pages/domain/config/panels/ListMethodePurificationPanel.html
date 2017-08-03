@@ -1,0 +1,53 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ListMethodePurificationPanel.html 133 2013-02-19 11:02:25Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/config/panels/ListMethodePurificationPanel.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+
+	<wicket:panel>
+		<p>
+			<a wicket:id="ListMethodePurificationPanel.NewMethodePurification" class="add"><wicket:message key="ListMethodePurificationPanel.NewMethodePurification" /></a>
+		</p>
+		<table cellspacing="0">
+			<thead>
+				<tr>
+					<th><wicket:message key="MethodePurification.nom" /></th>
+					<th><wicket:message key="MethodePurification.description" /></th>
+					<th><wicket:message key="MethodePurification.parametres" /></th>
+				</tr>
+			</thead>
+			<tbody wicket:id="ListMethodePurificationPanel.MethodesPurification.Refresh">
+				<tr wicket:id="ListMethodePurificationPanel.MethodesPurification">
+					<td><span wicket:id="ListMethodePurificationPanel.MethodesPurification.nom" /></td>
+					<td><span wicket:id="ListMethodePurificationPanel.MethodesPurification.description" /></td>
+					<td><span wicket:id="ListMethodePurificationPanel.MethodesPurification.parametres" /></td>
+					<td>
+					<a wicket:id="ListMethodePurificationPanel.MethodesPurification.Update" wicket:message="title:Update">
+							<img src="images/edit.png" wicket:message="alt:Update" />
+					</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</wicket:panel>
+</html>
+		

@@ -1,0 +1,56 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: 
+  $HeadURL:
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+	
+		<div class="property required">
+			<label for="TypeDocument.nom"><wicket:message key="TypeDocument.nom" /></label>
+			<input type="text" id="TypeDocument.nom" wicket:id="TypeDocument.nom" />
+		</div>
+            
+                <div class="property required">
+			<label for="TypeDocument.domaine"><wicket:message key="TypeDocument.domaine" /></label>
+			<input type="text" id="TypeDocument.domaine" wicket:id="TypeDocument.domaine" />
+		</div>
+		
+		<div class="property required">
+			<label for="TypeDocument.description"><wicket:message key="TypeDocument.description" /></label>
+			<textarea id="TypeDocument.description" wicket:id="TypeDocument.description" cols="120" rows="3"></textarea>
+		</div>
+			
+		<div class="actions">
+			<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+			<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+			<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+			<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+		</div>
+		
+	</form>
+
+</wicket:extend>
+</body>
+</html>

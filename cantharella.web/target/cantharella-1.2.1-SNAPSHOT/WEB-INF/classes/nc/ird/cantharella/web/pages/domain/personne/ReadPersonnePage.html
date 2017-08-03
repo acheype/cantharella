@@ -1,0 +1,49 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ReadPersonnePage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/personne/ReadPersonnePage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+	
+	<div id="sheet">
+	
+		<wicket:panel wicket:id="ReadPersonnePanel" />
+
+        <wicket:panel wicket:id="ReadListDocumentsPanel" />
+
+		<form wicket:id="Form">
+			<div class="actions">
+				<a class="edit" wicket:id="ReadPersonnePage.Personne.Update" wicket:message="title:Update">
+					<wicket:message key="Update" />
+				</a>
+				<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+				<a wicket:id="ReadPersonnePage.Personne.Back" wicket:message="title:Back">
+					<wicket:message key="Back" />
+				</a>
+			</div>
+		</form>
+	</div>
+
+</wicket:extend>
+</body>
+</html>

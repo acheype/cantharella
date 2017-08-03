@@ -1,0 +1,63 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: UpdateUtilisateurPage.html 133 2013-02-19 11:02:25Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/utilisateur/UpdateUtilisateurPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="FormProfile">
+		<fieldset>
+			<legend><wicket:message key="UpdateUtilisateurPage.Profile" /></legend>
+			<wicket:panel wicket:id="ManagePersonnePanel" />
+			<div class="actions">
+				<input type="submit" wicket:message="value:Submit" wicket:id="UpdateProfile" />
+				<a wicket:id="CancelProfile"><wicket:message key="Cancel" /></a>
+			</div>
+		</fieldset>
+	</form>
+	
+	<form wicket:id="FormPassword">
+		<fieldset>
+			<legend><wicket:message key="UpdateUtilisateurPage.Password" /></legend>
+			<div class="property required">
+				<label for="UpdateUtilisateurModel.currentPassword"><wicket:message key="UpdateUtilisateurModel.currentPassword" /></label>
+				<input id="UpdateUtilisateurModel.currentPassword" wicket:id="UpdateUtilisateurModel.currentPassword" type="password" />
+			</div>
+			<div class="property required">
+				<label for="UpdateUtilisateurModel.newPassword"><wicket:message key="UpdateUtilisateurModel.newPassword" /></label>
+				<input id="UpdateUtilisateurModel.newPassword" wicket:id="UpdateUtilisateurModel.newPassword" type="password" />
+			</div>
+			<div class="property required">
+				<label for="UpdateUtilisateurModel.newPasswordConfirmation"><wicket:message key="UpdateUtilisateurModel.newPasswordConfirmation" /></label>
+				<input id="UpdateUtilisateurModel.newPasswordConfirmation" wicket:id="UpdateUtilisateurModel.newPasswordConfirmation" type="password" />
+			</div>
+			<div class="actions">
+				<input type="submit" wicket:message="value:Submit" wicket:id="UpdatePassword" />
+				<a wicket:id="CancelPassword"><wicket:message key="Cancel" /></a>
+			</div>
+		</fieldset>
+	</form>
+
+</wicket:extend>
+</body>
+</html>

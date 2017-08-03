@@ -1,0 +1,120 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageSpecimenPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/specimen/ManageSpecimenPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+	
+		<div class="property required">
+			<label for="Specimen.ref"><wicket:message key="Specimen.ref" /></label>
+			<input type="text" id="Specimen.ref" wicket:id="Specimen.ref" />
+		</div>
+		
+		<div class="property required">
+			<label for="Specimen.embranchement"><wicket:message key="Specimen.embranchement" /></label>
+			<input type="text" id="Specimen.embranchement" wicket:id="Specimen.embranchement" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.famille"><wicket:message key="Specimen.famille" /></label>
+			<input type="text" id="Specimen.famille" wicket:id="Specimen.famille" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.genre"><wicket:message key="Specimen.genre" /></label>
+			<input type="text" id="Specimen.genre" wicket:id="Specimen.genre" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.espece"><wicket:message key="Specimen.espece" /></label>
+			<input type="text" id="Specimen.espece" wicket:id="Specimen.espece" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.sousEspece"><wicket:message key="Specimen.sousEspece" /></label>
+			<input type="text" id="Specimen.sousEspece" wicket:id="Specimen.sousEspece" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.variete"><wicket:message key="Specimen.variete" /></label>
+			<input type="text" id="Specimen.variete" wicket:id="Specimen.variete" />
+		</div>
+		
+		<div class="property required">
+			<label for="Specimen.typeOrganisme"><wicket:message key="Specimen.typeOrganisme" /></label>
+			<select id="Specimen.typeOrganisme" wicket:id="Specimen.typeOrganisme" />
+		</div>
+		
+		<div class="property">
+			<label for="Specimen.identificateur"><wicket:message key="Specimen.identificateur" /></label>
+			<select id="Specimen.identificateur" wicket:id="Specimen.identificateur" />
+			<a wicket:id="NewPersonne" class="add"><wicket:message key="ListPersonnesPage.NewPersonne" /></a>
+		</div>
+
+		<div class="property">
+			<label for="Specimen.station"><wicket:message key="Specimen.station" /></label>
+			<select id="Specimen.station" wicket:id="Specimen.station" />
+			<a wicket:id="NewStation" class="add"><wicket:message key="ListStationsPage.NewStation" /></a>
+		</div>
+
+		<div class="property">
+			<label for="Specimen.complement"><wicket:message key="Specimen.complement" /></label>
+			<textarea id="Specimen.complement" wicket:id="Specimen.complement"></textarea>
+		</div>
+		
+		<div class="property required">
+			<label for="Specimen.createur"><wicket:message key="Specimen.createur" /></label>
+			<input type="text" id="Specimen.createur" wicket:id="Specimen.createur" disabled="disabled"/>
+		</div>
+		
+		<fieldset>
+			<legend><wicket:message key="Specimen.depot" /></legend>
+			<div class="property">
+				<label for="Specimen.numDepot"><wicket:message key="Specimen.numDepot" /></label>
+				<input type="text" id="Specimen.numDepot" wicket:id="Specimen.numDepot" />
+			</div>
+			<div class="property">
+				<label for="Specimen.dateDepot"><wicket:message key="Specimen.dateDepot" /></label>
+				<input type="text" id="Specimen.dateDepot" wicket:id="Specimen.dateDepot" />
+			</div>
+			<div class="property">
+				<label for="Specimen.lieuDepot"><wicket:message key="Specimen.lieuDepot" /></label>
+				<input type="text" id="Specimen.lieuDepot" wicket:id="Specimen.lieuDepot" />
+			</div>
+		</fieldset>
+
+	    <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+		<div class="actions">
+			<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+			<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+			<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+			<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+		</div>
+	</form>
+
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManagePurificationPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/purification/ManagePurificationPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+
+	<div class="property required">
+		<label for="Purification.ref"><wicket:message key="Purification.ref" /></label>
+		<input type="text" id="Purification.ref" wicket:id="Purification.ref" />
+	</div>
+
+	<div class="property required">
+		<label for="Purification.manipulateur"><wicket:message key="Purification.manipulateur" /></label>
+		<select id="Purification.manipulateur" wicket:id="Purification.manipulateur" />
+		<a wicket:id="NewPersonne" class="add"><wicket:message key="ListPersonnesPage.NewPersonne" /></a>
+	</div>
+	
+	<div class="property required">
+		<label for="Purification.date"><wicket:message key="Purification.date" /></label>
+		<input type="text" id="Purification.date" wicket:id="Purification.date" />
+	</div>
+
+	<div class="property required">
+		<label for="Purification.produit"><wicket:message key="Purification.produit" /></label>
+		<select id="Purification.produit" wicket:id="Purification.produit" />
+	</div>
+	
+	<div class="property">
+		<label for="Purification.masseDepart"><wicket:message key="Purification.masseDepart" /></label>
+		<input type="text" id="Purification.masseDepart" wicket:id="Purification.masseDepart" />
+	</div>
+	
+	<div class="property">
+		<label for="Purification.complement"><wicket:message key="Purification.complement" /></label>
+		<textarea id="Purification.complement" wicket:id="Purification.complement"></textarea>
+	</div>
+	
+	<div class="property required">
+		<label for="Purification.createur"><wicket:message key="Purification.createur" /></label>
+		<input type="text" id="Purification.createur" wicket:id="Purification.createur" disabled="disabled"/>
+	</div>
+	
+	<fieldset wicket:id="Purification.methode">
+			<legend><wicket:message key="Purification.methode" /></legend>
+			<div class="property required">
+				<label for="Purification.nomMethode"><wicket:message key="MethodePurification.nom" /></label>
+				<select id="Purification.nomMethode" wicket:id="Purification.nomMethode" />
+			</div>
+			<div class="property" wicket:id="Purification.descriptionMethodeCont">
+				<span class="label"><wicket:message key="MethodePurification.description" /></span>
+				<span class="quote" wicket:id="Purification.descriptionMethode"/>
+			</div>
+			<div class="property" wicket:id="Purification.paramsMethode">
+				<label for="Purification.paramsMethode.Table"><wicket:message key="MethodePurification.parametres" /></label>
+				<table id="Purification.paramsMethode.Table" wicket:id="Purification.paramsMethode.Table">
+					<tr wicket:id="Purification.paramsMethode.List">
+						<td><span wicket:id="Purification.paramsMethode.nom"/><wicket:container wicket:id="Purification.paramsMethode.nom.info"/></td>
+						<td><input type="text" wicket:id="Purification.paramsMethode.valeur"/></td>
+					</tr>
+				</table>
+			</div>
+	</fieldset>
+	
+	<fieldset>
+		<legend><wicket:message key="Purification.fractions" /></legend>
+		<table cellspacing="0" wicket:id="Purification.fractions.Table">
+			<thead>
+				<tr>
+					<th class="required">
+						<label for="Purification.fractions.List.indice"><wicket:message key="Fraction.indice" /></label>
+					</th>
+					<th class="required">
+						<label for="Purification.fractions.List.ref"><wicket:message key="Fraction.ref" /></label>
+					</th>
+					<th>
+						<label for="Purification.fractions.List.masseObtenue"><wicket:message key="Fraction.masseObtenue" /></label>
+					</th>
+					<th>
+						<label for="Purification.fractions.List.rendement"><wicket:message key="Fraction.rendement" /></label>
+					</th>
+					<th><wicket:message key="Actions" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="Purification.fractions.List">
+					<td>
+						<span wicket:id="Purification.fractions.List.indice" />
+					</td>
+					<td>
+						<span wicket:id="Purification.fractions.List.ref" />
+					</td>
+					<td>
+						<span wicket:id="Purification.fractions.List.masseObtenue" />
+					</td>
+					<td>
+						<span wicket:id="Purification.fractions.List.rendement" />
+					</td>
+					<td>
+						<input wicket:id="Purification.fractions.List.Delete" type="submit" wicket:message="value:Delete" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" id="Purification.fractions.indice" wicket:id="Purification.fractions.indice" />
+					</td>
+					<td>
+						<input type="text" id="Purification.fractions.ref" wicket:id="Purification.fractions.ref" />
+					</td>
+					<td>
+						<input type="text" id="Purification.fractions.masseObtenue" wicket:id="Purification.fractions.masseObtenue" />
+					</td>
+					<td>
+					</td>
+					<td>
+						<input wicket:id="Purification.fractions.Add" type="submit" wicket:message="value:Add" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+
+    <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+	<div class="actions">
+		<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+	 	<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+	 	<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+	 	<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+	</div>
+		
+	</form>
+
+</wicket:extend>
+</body>
+</html>

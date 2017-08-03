@@ -1,0 +1,194 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageMoleculePage.html 151 2013-02-22 09:30:28Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/molecule/ManageMoleculePage.html $
+  %%
+  Copyright (C) 2009 - 2013 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+		
+		<div class="property">
+			<label for="Molecule.nomCommun"><wicket:message key="Molecule.nomCommun" /></label>
+			<input type="text" id="Molecule.nomCommun" wicket:id="Molecule.nomCommun" />
+		</div>
+		
+		<div class="property">
+			<label for="Molecule.familleChimique"><wicket:message key="Molecule.familleChimique" /></label>
+			<input type="text" id="Molecule.familleChimique" wicket:id="Molecule.familleChimique" />
+		</div>
+		
+		<div class="property">
+			<label><wicket:message key="Molecule.formuleDevMol" /></label>
+			<input type="hidden" wicket:id="Molecule.formuleDevMol" />
+		</div>
+		
+		<div class="property">
+			<label for="Molecule.nomIupca"><wicket:message key="Molecule.nomIupca" /></label>
+			<input type="text" id="Molecule.nomIupca" wicket:id="Molecule.nomIupca" />
+		</div>
+		
+		<div class="property required">
+            <label for="Molecule.formuleBrute"><wicket:message key="Molecule.formuleBrute" />
+                <wicket:container wicket:id="Molecule.formuleBrute.info"/></label>
+            <input type="text" id="Molecule.formuleBrute" wicket:id="Molecule.formuleBrute" />
+		</div>
+		
+		<div class="property required">
+			<label for="Molecule.masseMolaire"><wicket:message key="Molecule.masseMolaire" /></label>
+			<input type="text" id="Molecule.masseMolaire" wicket:id="Molecule.masseMolaire" />
+		</div>
+		
+        <fieldset>
+          <legend><wicket:message key="Molecule.nouvMolecul" /></legend>
+
+  		  <div class="property">
+  			<label for="Molecule.nouvMolecul"><wicket:message key="Molecule.nouvMolecul" />
+                <wicket:container wicket:id="Molecule.nouvMolecul.info"/></label>
+  			<input type="checkbox" id="Molecule.nouvMolecul" wicket:id="Molecule.nouvMolecul" />
+  		  </div>
+      
+          
+          <div wicket:id="Molecule.nouvMolecul.Refresh">
+            <div class="property">
+                <label for="Molecule.campagne"><wicket:message key="Molecule.campagne" /></label>
+                <select id="Molecule.campagne" wicket:id="Molecule.campagne" />
+                <a wicket:id="NewCampagne" class="add"><wicket:message key="ListCampagnesPage.NewCampagne" /></a>
+            </div>
+    		
+    		  <div class="property">
+    			<label for="Molecule.identifieePar"><wicket:message key="Molecule.identifieePar" /></label>
+    			<input type="text" id="Molecule.identifieePar" wicket:id="Molecule.identifieePar" />
+    		  </div>
+        
+            <div class="property">
+                <label for="Molecule.publiOrigine"><wicket:message key="Molecule.publiOrigine" /></label>
+                <textarea id="Molecule.publiOrigine" wicket:id="Molecule.publiOrigine"></textarea>
+            </div>
+          </div>
+        </fieldset>
+        
+        <div class="property">
+            <label for="Molecule.complement"><wicket:message key="Molecule.complement" /></label>
+            <textarea id="Molecule.complement" wicket:id="Molecule.complement"></textarea>
+        </div>
+		
+		<div class="property required">
+			<label for="Molecule.createur"><wicket:message key="Molecule.createur" /></label>
+			<input type="text" id="Molecule.createur" wicket:id="Molecule.createur" disabled="disabled"/>
+		</div>
+
+        <fieldset>
+            <legend><wicket:message key="Molecule.provenance" /></legend>
+            <table cellspacing="0" wicket:id="Molecule.provenance.Table">
+                <thead>
+                    <tr>
+                        <th class="required">
+                            <label for="Molecule.provenance.List.produit.ref"><wicket:message key="Molecule.provenance.produit.ref" /></label>
+                        </th>
+                        <th>
+                            <label for="Molecule.provenance.List.presence"><wicket:message key="Molecule.provenance.presence" /></label>
+                        </th>
+                        <th>
+                            <label for="Molecule.provenance.List.lot.ref"><wicket:message key="Molecule.provenance.lot.ref" /></label>
+                        </th>
+                        <th>
+                            <label for="Molecule.provenance.List.genre"><wicket:message key="Molecule.provenance.genre" /></label>
+                        </th>
+                        <th>
+                            <label for="Molecule.provenance.List.espece"><wicket:message key="Molecule.provenance.espece" /></label>
+                        </th>
+                        <th>
+                            <label for="Molecule.provenance.List.campagne"><wicket:message key="Molecule.provenance.campagne" /></label>
+                        </th>
+                        <th><wicket:message key="Actions" /></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr wicket:id="Molecule.provenance.List">
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.produit.ref" />
+                        </td>
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.presence" />
+                        </td>
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.lot.ref" />
+                        </td>
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.genre" />
+                        </td>
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.espece" />
+                        </td>
+                        <td>
+                            <span wicket:id="Molecule.provenance.List.campagne" />
+                        </td>
+                        <td>
+                            <input wicket:id="Molecule.provenance.List.Delete" type="submit" wicket:message="value:Delete" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select class="tiny" id="Molecule.provenance.produit.ref" wicket:id="Molecule.provenance.produit.ref" />
+                        </td>
+                        <td>
+                            <input type="text" class="tiny" id="Molecule.provenance.presence" wicket:id="Molecule.provenance.presence" />
+                        </td>
+                        <td>
+                            <span id="Molecule.provenance.lot.ref" wicket:id="Molecule.provenance.lot.ref" />
+                        </td>
+                        <td>
+                            <span id="Molecule.provenance.genre" wicket:id="Molecule.provenance.genre" />
+                        </td>
+                        <td>
+                            <span id="Molecule.provenance.espece" wicket:id="Molecule.provenance.espece" />
+                        </td>
+                        <td>
+                            <span id="Molecule.provenance.campagne" wicket:id="Molecule.provenance.campagne" />
+                        </td>
+                        <td>
+                            <input wicket:id="Molecule.provenance.Add" type="submit" wicket:message="value:Add" />
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot class="highlightFoot" wicket:id="Molecule.provenance.resultsNotAccessibles">
+                    <tr>
+                        <td colspan="7"><span class="info"><wicket:message key="Molecule.provenanceNotAccessibles"/></span></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </fieldset>
+
+        <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+		<div class="actions">
+			<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+			<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+			<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+			<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+		</div>
+	</form>
+
+</wicket:extend>
+</body>
+</html>

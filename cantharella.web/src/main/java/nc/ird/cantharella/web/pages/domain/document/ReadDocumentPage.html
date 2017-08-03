@@ -1,0 +1,118 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ReadDocumentPage.html 190 2013-03-27 15:21:42Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/document/ReadDocumentPage.html $
+  %%
+  Copyright (C) 2009 - 2013 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+    <div id="sheet">    
+        <div class="property">
+            <span class="label"><wicket:message key="Document.titre" /></span>
+            <span class="value" wicket:id="Document.titre"></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.createur" /></span>
+            <span class="value" wicket:id="Document.createur"></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.editeur" /></span>
+            <span class="value" wicket:id="Document.editeur"></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.dateCreation" /></span>
+            <span class="value" wicket:id="Document.dateCreation"></span>
+        </div>
+            
+        <div class="property">
+            <span class="label"><wicket:message key="Document.description" /></span>
+            <span class="value" wicket:id="Document.description"></span>
+        </div>
+
+        <div class="property">
+            <span class="label"><wicket:message key="Document.langue" /></span>
+            <span class="value" wicket:id="Document.langue" ></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.contrainteLegale" /></span>
+            <span class="value" wicket:id="Document.contrainteLegale" ></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.ajoutePar" /></span>
+            <span class="value" wicket:id="Document.ajoutePar" ></span>
+        </div>
+
+        <fieldset>
+            <legend><wicket:message key="Document.typeDocument" /></legend>
+
+            <div class="property">
+                <span class="label"><wicket:message key="TypeDocument.nom" /></span>
+                <span class="value" wicket:id="TypeDocument.nom" ></span>
+            </div>
+            
+            <div class="property">
+                <span class="label"><wicket:message key="TypeDocument.domaine" /></span>
+                <span class="value" wicket:id="TypeDocument.domaine" ></span>
+            </div>
+            
+            <div class="property">
+                <span class="label"><wicket:message key="TypeDocument.description" /></span>
+                <span class="value" wicket:id="TypeDocument.description" ></span>
+            </div>
+        </fieldset>
+
+        <div class="property">
+            <span class="label"><wicket:message key="Document.file" /></span>
+            <span class="value" wicket:id="Document.file"></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.fileMimetype" /></span>
+            <span class="value" wicket:id="Document.fileMimetype"></span>
+        </div>
+        
+        <div class="property">
+            <span class="label"><wicket:message key="Document.link" /></span>
+            <span class="value" wicket:id="Document.link"></span>
+        </div>
+        
+        <form wicket:id="Form">
+            <div class="actions">
+                <a class="edit" wicket:id="ReadDocumentPage.Document.Update" wicket:message="title:Update">
+                    <wicket:message key="Update" />
+                </a>
+                
+                <input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+                
+                <a wicket:id="ReadDocumentPage.Document.Back" wicket:message="title:Back">
+                    <wicket:message key="Back" />
+                </a>
+            </div>
+        </form>
+    </div>
+</wicket:extend>
+</body>
+</html>

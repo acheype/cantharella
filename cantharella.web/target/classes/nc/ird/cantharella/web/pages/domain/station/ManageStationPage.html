@@ -1,0 +1,92 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageStationPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/station/ManageStationPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+	
+		<div class="property required">
+			<label for="Station.nom"><wicket:message key="Station.nom" /></label>
+			<input id="Station.nom" wicket:id="Station.nom" type="text" />
+		</div>
+	
+		<div class="property required">
+			<label for="Station.codePays"><wicket:message key="Station.codePays" /></label>
+			<select id="Station.codePays" wicket:id="Station.codePays" />
+		</div>
+		
+		<div class="property">
+			<label for="Station.localite"><wicket:message key="Station.localite" /></label>
+			<input id="Station.localite" wicket:id="Station.localite" type="text" />
+		</div>
+		
+		<div class="property">
+			<label for="Station.complement"><wicket:message key="Station.complement" /></label>
+			<textarea id="Station.complement" wicket:id="Station.complement"></textarea>
+		</div>
+
+		<div class="property">
+			<label for="Station.createur"><wicket:message key="Station.createur" /></label>
+			<input id="Station.createur" wicket:id="Station.createur" type="text" disabled="disabled" />
+		</div>
+		
+		<fieldset>
+			<legend><wicket:message key="Station.coordonnees" /></legend>
+			<div class="property">
+				<label for="ManageStationModel.latitudeDegrees"><wicket:message key="Station.latitude" /></label>
+				<input id="ManageStationModel.latitudeDegrees" wicket:id="ManageStationModel.latitudeDegrees" type="text" class="tiny" />
+				<span wicket:id="Coordonnate.degrees.latitude" />
+				<input id="ManageStationModel.latitudeMinutes" wicket:id="ManageStationModel.latitudeMinutes" type="text" class="tiny" />
+				<span wicket:id="Coordonnate.minutes.latitude" />
+				<select id="ManageStationModel.latitudeOrientation" wicket:id="ManageStationModel.latitudeOrientation" class="tiny" />
+			</div>
+			<div class="property">
+				<label for="ManageStationModel.longitudeDegrees"><wicket:message key="Station.longitude" /></label>
+				<input id="ManageStationModel.longitudeDegrees" wicket:id="ManageStationModel.longitudeDegrees" type="text" class="tiny" />
+				<span wicket:id="Coordonnate.degrees.longitude" />
+				<input id="ManageStationModel.longitudeMinutes" wicket:id="ManageStationModel.longitudeMinutes" type="text" class="tiny" />
+				<span wicket:id="Coordonnate.minutes.longitude" />
+				<select id="ManageStationModel.longitudeOrientation" wicket:id="ManageStationModel.longitudeOrientation" class="tiny" />
+			</div>
+			<div class="property">
+				<label for="Station.referentiel"><wicket:message key="Station.referentiel" /></label>
+				<select id="Station.referentiel" wicket:id="Station.referentiel" />
+			</div>
+		</fieldset>
+
+        <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+		<div class="actions">
+			<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+			<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+			<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+			<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+		</div>
+		
+	</form>
+
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManagePersonnePanel.html 133 2013-02-19 11:02:25Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/personne/panels/ManagePersonnePanel.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+		
+	<div class="property required">
+		<label for="Personne.prenom"><wicket:message key="Personne.prenom" /></label>
+		<input id="Personne.prenom" wicket:id="Personne.prenom" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.nom"><wicket:message key="Personne.nom" /></label>
+		<input id="Personne.nom" wicket:id="Personne.nom" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.organisme"><wicket:message key="Personne.organisme" /></label>
+		<input id="Personne.organisme" wicket:id="Personne.organisme" type="text" />
+	</div>
+	
+	<div class="property">
+		<label for="Personne.fonction"><wicket:message key="Personne.fonction" /></label>
+		<input id="Personne.fonction" wicket:id="Personne.fonction" type="text" />
+	</div>
+
+	<div class="property">
+		<label for="Personne.tel"><wicket:message key="Personne.tel" /></label>
+		<input id="Personne.tel" wicket:id="Personne.tel" type="text" />
+	</div>
+	
+	<div class="property">
+		<label for="Personne.fax"><wicket:message key="Personne.fax" /></label>
+		<input id="Personne.fax" wicket:id="Personne.fax" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.courriel"><wicket:message key="Personne.courriel" /></label>
+		<input id="Personne.courriel" wicket:id="Personne.courriel" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.adressePostale"><wicket:message key="Personne.adressePostale" /></label>
+		<textarea id="Personne.adressePostale" wicket:id="Personne.adressePostale"></textarea>
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.codePostal"><wicket:message key="Personne.codePostal" /></label>
+		<input id="Personne.codePostal" wicket:id="Personne.codePostal" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.ville"><wicket:message key="Personne.ville" /></label>
+		<input id="Personne.ville" wicket:id="Personne.ville" type="text" />
+	</div>
+	
+	<div class="property required">
+		<label for="Personne.codePays"><wicket:message key="Personne.codePays" /></label>
+		<select id="Personne.codePays" wicket:id="Personne.codePays" />
+	</div>
+
+</wicket:panel>
+</body>
+</html>

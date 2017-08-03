@@ -1,0 +1,224 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageTestBioPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/testBio/ManageTestBioPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+
+	<div class="property required">
+		<label for="TestBio.ref"><wicket:message key="TestBio.ref" /></label>
+		<input type="text" id="TestBio.ref" wicket:id="TestBio.ref" />
+	</div>
+
+	<div class="property required">
+		<label for="TestBio.manipulateur"><wicket:message key="TestBio.manipulateur" /></label>
+		<select id="TestBio.manipulateur" wicket:id="TestBio.manipulateur" />
+		<a wicket:id="NewPersonne" class="add"><wicket:message key="ListPersonnesPage.NewPersonne" /></a>
+	</div>
+	
+	<div class="property required">
+		<label for="TestBio.organismeTesteur"><wicket:message key="TestBio.organismeTesteur" /></label>
+		<input type="text" id="TestBio.organismeTesteur" wicket:id="TestBio.organismeTesteur" />
+	</div>
+	
+	<div class="property required">
+		<label for="TestBio.date"><wicket:message key="TestBio.date" /></label>
+		<input type="text" id="TestBio.date" wicket:id="TestBio.date" />
+	</div>
+
+	<fieldset wicket:id="TestBio.methode" class="insideForm">
+			<legend><wicket:message key="TestBio.methode" /></legend>
+			<div class="property required">
+				<label for="TestBio.nomMethode"><wicket:message key="MethodeTestBio.nom" /></label>
+				<select id="TestBio.nomMethode" wicket:id="TestBio.nomMethode" />
+			</div>
+			<div wicket:id="TestBio.descriptionMethodeCont">
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.cible" /></span>
+					<span class="quote" wicket:id="TestBio.cibleMethode"/>
+				</div>
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.domaine" /></span>
+					<span class="quote" wicket:id="TestBio.domaineMethode"/>
+				</div>
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.description" /></span>
+					<span class="quote" wicket:id="TestBio.descriptionMethode"/>
+				</div>
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.valeurMesuree" /></span>
+					<span class="quote" wicket:id="TestBio.valeurMesureeMethode"/>
+				</div>
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.critereActivite" /></span>
+					<span class="quote" wicket:id="TestBio.critereActiviteMethode"/>
+				</div>
+				<div class="property">
+					<span class="label"><wicket:message key="MethodeTestBio.uniteResultat" /></span>
+					<span class="quote" wicket:id="TestBio.uniteResultatMethode"/>
+				</div>
+			</div>
+	</fieldset>
+
+	<div class="property">
+		<label for="TestBio.concMasseDefaut"><wicket:message key="TestBio.concMasseDefaut" /></label>
+		<input class="half" type="text" id="TestBio.concMasseDefaut" wicket:id="TestBio.concMasseDefaut" />
+		<select class="half" id="TestBio.uniteConcMasseDefaut" wicket:id="TestBio.uniteConcMasseDefaut" />
+	</div>
+	
+	<div class="property">
+		<label for="TestBio.stadeDefaut"><wicket:message key="TestBio.stadeDefaut" /></label>
+		<select id="TestBio.stadeDefaut" wicket:id="TestBio.stadeDefaut" />
+	</div>
+	
+	<div class="property">
+		<label for="TestBio.complement"><wicket:message key="TestBio.complement" /></label>
+		<textarea id="TestBio.complement" wicket:id="TestBio.complement"></textarea>
+	</div>
+	
+	<div class="property required">
+		<label for="TestBio.createur"><wicket:message key="TestBio.createur" /></label>
+		<input type="text" id="TestBio.createur" wicket:id="TestBio.createur" disabled="disabled"/>
+	</div>
+	
+	<fieldset>
+		<legend><wicket:message key="TestBio.resultats" /></legend>
+		<table class="large" cellspacing="0" wicket:id="TestBio.resultats.Table">
+			<thead>
+				<tr>
+					<th class="required">
+						<label for="TestBio.resultats.List.repere"><wicket:message key="ResultatTestBio.repere" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.typeResultat"><wicket:message key="ResultatTestBio.typeResultat" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.produit"><wicket:message key="ResultatTestBio.produit" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.produitTemoin"><wicket:message key="ResultatTestBio.produitTemoin" /></label>
+					</th>
+					<th>
+						<label for="TestBio.resultats.List.concMasse"><wicket:message key="ResultatTestBio.concMasse" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.stade"><wicket:message key="ResultatTestBio.stade" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.valeur"><wicket:message key="ResultatTestBio.valeur" /></label>
+					</th>
+					<th class="required">
+						<label for="TestBio.resultats.List.actif"><wicket:message key="ResultatTestBio.actif" /></label>
+					</th>
+					<th>
+						<label for="TestBio.resultats.List.erreur"><wicket:message key="ResultatTestBio.erreur" /></label>
+					</th>
+					<th><wicket:message key="Actions" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="TestBio.resultats.List">
+					<td>
+						<span wicket:id="TestBio.resultats.List.repere" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.typeResultat" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.produit" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.produitTemoin" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.concMasse" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.stade" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.valeur" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.actif" />
+					</td>
+					<td>
+						<span wicket:id="TestBio.resultats.List.erreur" /><wicket:container wicket:id="TestBio.resultats.List.erreur.info"/>
+					</td>
+					<td>
+						<input wicket:id="TestBio.resultats.List.Delete" type="submit" wicket:message="value:Delete" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" class="tiny" id="TestBio.resultats.repere" wicket:id="TestBio.resultats.repere" />
+					</td>
+					<td>
+						<select class="tiny" id="TestBio.resultats.typeResultat" wicket:id="TestBio.resultats.typeResultat" />
+					</td>
+					<td>
+						<select id="TestBio.resultats.produit" wicket:id="TestBio.resultats.produit" />
+					</td>
+					<td>
+						<input type="text" class="tiny" id="TestBio.resultats.produitTemoin" wicket:id="TestBio.resultats.produitTemoin" />
+					</td>
+					<td style="white-space: nowrap;">
+						<input type="text" class="tiny" id="TestBio.resultats.concMasse" wicket:id="TestBio.resultats.concMasse" />
+						<select class="tiny" id="TestBio.resultats.uniteConcMasse" wicket:id="TestBio.resultats.uniteConcMasse"/>
+					</td>
+					<td>
+						<select id="TestBio.resultats.stade" wicket:id="TestBio.resultats.stade" />
+					</td>
+					<td>
+						<input type="text" class="tiny" id="TestBio.resultats.valeur" wicket:id="TestBio.resultats.valeur" />
+					</td>
+					<td>
+						<input type="checkbox" id="TestBio.resultats.actif" wicket:id="TestBio.resultats.actif" />
+					</td>
+					<td>
+						<select class="tiny" id="TestBio.resultats.erreur" wicket:id="TestBio.resultats.erreur" /><span wicket:id="TestBio.resultats.erreur.info"/>
+					</td>
+					<td>
+						<input wicket:id="TestBio.resultats.Add" type="submit" wicket:message="value:Add" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+
+    <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+	<div class="actions">
+		<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+	 	<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+	 	<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+	 	<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+	</div>
+		
+	</form>
+
+</wicket:extend>
+</body>
+</html>

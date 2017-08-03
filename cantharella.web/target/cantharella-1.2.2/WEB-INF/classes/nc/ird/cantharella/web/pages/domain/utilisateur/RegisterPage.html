@@ -1,0 +1,55 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: RegisterPage.html 133 2013-02-19 11:02:25Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/utilisateur/RegisterPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+		
+		<wicket:panel wicket:id="ManagePersonnePanel" />
+		
+		<div class="property required">
+			<label for="RegisterModel.password"><wicket:message key="RegisterModel.password" /></label>
+			<input id="RegisterModel.password" wicket:id="RegisterModel.password" type="password" />
+		</div>
+		
+		<div class="property required">
+			<label for="RegisterModel.passwordConfirmation"><wicket:message key="RegisterModel.passwordConfirmation" /></label>
+			<input id="RegisterModel.passwordConfirmation" wicket:id="RegisterModel.passwordConfirmation" type="password" />
+		</div>
+		
+		<div class="property required">
+			<img wicket:id="CaptchaModel.captchaImage" wicket:message="alt:CaptchaModel.captcha" /><br />
+			<label for="CaptchaModel.captchaText"><wicket:message key="CaptchaModel.captchaText" /></label>
+			<input id="CaptchaModel.captchaText" wicket:id="CaptchaModel.captchaText" type="text" />
+		</div>
+		
+		<div class="actions">
+			<input type="submit" wicket:message="value:Submit" wicket:id="Register" />
+		</div>
+	</form>
+
+</wicket:extend>
+</body>
+</html>

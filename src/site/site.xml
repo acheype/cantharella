@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  Cantharella
+  $Id: site.xml 213 2013-04-30 10:52:22Z acheype $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/src/site/site.xml $
+  %%
+  Copyright (C) 2009 - 2013 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<project name="Cantharella">
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.3.0</version>
+  </skin>
+
+  <publishDate position="right"/>
+  <version position="right" />
+
+  <bannerLeft>
+    <name>${project.name}</name>
+    <href>index.html</href>
+  </bannerLeft>
+
+  <poweredBy>
+    <logo href="http://maven.apache.org" name="Maven"
+          img="${project.url}/images/logos/maven-feather.png"/>
+    <logo href="http://maven-site.nuiton.org/jrst" name="JRst"
+          img="${project.url}/images/jrst-logo.png"/>
+  </poweredBy>
+
+  <body>
+
+    <breadcrumbs>
+      <item name="${project.name}" href="index.html"/>
+    </breadcrumbs>
+
+    <links>
+      <item name="IRD" href="http://www.ird.fr"/>
+      <item name="Code Lutin" href="http://www.codelutin.com"/>
+    </links>
+
+    <menu name="User">
+      <item name="About" href="index.html"/>
+      <item name="Installation" href="installation.html"/>
+      <item name="Configuration" href="configuration.html"/>
+    </menu>
+
+    <menu ref="modules"/>
+    <menu ref="reports"/>
+  </body>
+
+</project>

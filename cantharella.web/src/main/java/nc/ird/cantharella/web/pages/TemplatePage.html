@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: TemplatePage.html 277 2017-08-03 01:32:51Z acheype $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/TemplatePage.html $
+  %%
+  Copyright (C) 2009 - 2013 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<html xmlns:wicket="http://wicket.apache.org" wicket:message="lang:TemplatePage.Lang">
+<head>
+<title>Cantharella - <wicket:head>
+	<wicket:container wicket:id="PageTitleHead" />
+</wicket:head></title>
+<meta name="description" wicket:message="content:TemplatePage.Subtitle" />
+<meta name="author" content="IRD" />
+<meta name="copyright" wicket:message="content:TemplatePage.Copyright" />
+<meta name="language" wicket:message="content:TemplatePage.Lang" />
+<meta http-equiv="Content-language" wicket:message="content:TemplatePage.Lang" />
+<meta http-equiv="Content-type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-style-type" content="text/css" />
+<link href="css/general.css" rel="stylesheet" type="text/css" media="all" />
+<wicket:remove> <!-- dynamic declaration depending on locale -->
+	<link href="css/menu_fr.css" rel="stylesheet" type="text/css" media="all" />
+</wicket:remove>
+<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="js/slidemenu.js"></script>
+</head>
+<body onload="slideMenu.build('sm',360,10,10,1)">
+
+<div class="banner" wicket:id="TemplatePage.Banner">
+  <a>En développement</a>
+</div>
+
+<div id="header"><div>
+
+	<div id="title">
+		<span><a wicket:id="HomePage"><img alt="Accueil" src="images/cantharella.jpg"/></a></span>
+        <h1>CANTHARELLA</h1>
+		<p><wicket:message key="TemplatePage.Subtitle" /></p>
+	</div>
+    <div id="satellite">
+    	<ul id="evitement">
+			<li><a wicket:message="title:TemplatePage.MainNav" href="#menu"><img alt="Navigation principale" src="images/picto_menu.png"/></a></li>
+			<li><a wicket:message="title:TemplatePage.ContentNav" href="#content"><img alt="Aller au contenu" src="images/picto_contenu.png"/></a></li>
+		</ul>
+		<wicket:container wicket:id="Satellite.USER">
+    		<p><wicket:message key="TemplatePage.Welcome" /> <a wicket:id="UpdateUtilisateurPage" class="edit no_cr"><span wicket:id="Utilisateur" /></a></p>
+       		<p><a wicket:id="TemplatePage.Logout"><wicket:message key="TemplatePage.Logout" /></a></p>
+       	</wicket:container>
+    </div>
+    
+    <wicket:container wicket:id="Search.USER">
+    	<div id="search">
+    		<form wicket:id="Search.FORM">
+    			<div>
+	    			<label for="search_txt" style="display: none"><wicket:message key="TemplatePage.Search.Label"/></label>
+					<input type="text" wicket:id="Search.query" id="search_txt"/>
+					<input type="submit" id="search_submit" wicket:message="value:TemplatePage.Search, title:TemplatePage.Search.Launch" />
+				</div>
+			</form>
+    	</div>
+    </wicket:container>
+    
+    <div id="menu">
+    <wicket:container wicket:id="Menu.VISITOR">
+    	<ul id="sm" class="sm">
+	            <li class="sm0">
+			    	<ul>
+			    		<li></li>
+			    	</ul>
+	            </li>
+	            
+	            <li class="sm4 ech"><span><wicket:message key="TemplatePage.Sampling"/></span><img src="images/echantillonage.jpg" />
+		            <ul>
+		           		<li><wicket:message key="ListCampagnesPage" /></li>
+						<li><wicket:message key="ListStationsPage" /></li>
+						<li><wicket:message key="ListSpecimensPage" /></li>
+						<li><wicket:message key="ListLotsPage" /></li>
+		            </ul>
+	            </li>
+	            <li  class="sm3 tra"><span><wicket:message key="TemplatePage.Processing"/></span><img src="images/traitements.jpg" />
+		            <ul>
+		           	 	<li><wicket:message key="ListExtractionsPage" /></li>
+						<li><wicket:message key="ListPurificationsPage" /></li>
+		            </ul>
+	            </li>
+	            <li  class="sm2 chi"><span><wicket:message key="TemplatePage.Chemistry"/></span><img src="images/chimie.jpg" />
+		            <ul>
+		           	 	<li><wicket:message key="ListMoleculesPage" /></li>
+		            </ul>
+	            </li>
+	            <li  class="sm1 bio"><span><wicket:message key="TemplatePage.Biology"/></span><img src="images/biologie.jpg" />
+		            <ul>
+		           		<li><wicket:message key="ListTestsBioPage2" /></li>
+		            </ul>
+	            </li>
+		</ul>
+    </wicket:container>
+    
+	<wicket:container wicket:id="Menu.USER">
+		<ul id="sm" class="sm">
+	            <li class="sm0">
+		            <ul>
+		            	<wicket:container wicket:id="Menu.ADMIN">
+			            	<li><a wicket:id="ListConfigurationPage"><wicket:message key="ListConfigurationPage" /></a></li>
+			            </wicket:container>
+		            	<li><a wicket:id="ListPersonnesPage"><wicket:message key="ListPersonnesPage" /></a></li>
+		            </ul>
+	            </li>
+	            
+	            <li  class="sm4 ech"><span><wicket:message key="TemplatePage.Sampling"/></span><img src="images/echantillonage.jpg" />
+		            <ul>
+		           		<li><a wicket:id="ListCampagnesPage"><wicket:message key="ListCampagnesPage" /></a></li>
+						<li><a wicket:id="ListStationsPage"><wicket:message key="ListStationsPage" /></a></li>
+						<li><a wicket:id="ListSpecimensPage"><wicket:message key="ListSpecimensPage" /></a></li>
+						<li><a wicket:id="ListLotsPage"><wicket:message key="ListLotsPage" /></a></li>
+		            </ul>
+	            </li>
+	            <li  class="sm3 tra"><span><wicket:message key="TemplatePage.Processing"/></span><img src="images/traitements.jpg" />
+		            <ul>
+		           	 	<li><a wicket:id="ListExtractionsPage"><wicket:message key="ListExtractionsPage" /></a></li>
+						<li><a wicket:id="ListPurificationsPage"><wicket:message key="ListPurificationsPage" /></a></li>
+		            </ul>
+	            </li>
+	            <li  class="sm2 chi"><span><wicket:message key="TemplatePage.Chemistry"/></span><img src="images/chimie.jpg" />
+		            <ul>
+		           	 	<li><a wicket:id="ListMoleculesPage"><wicket:message key="ListMoleculesPage" /></a></li>
+		            </ul>
+	            </li>
+	            <li  class="sm1 bio"><span><wicket:message key="TemplatePage.Biology"/></span><img src="images/biologie.jpg" />
+		            <ul>
+		           		<li><a wicket:id="ListTestsBioPage" class="no_cr"><wicket:message key="ListTestsBioPage2" /></a></li>
+		            </ul>
+	            </li>
+	    	
+		</ul>
+	</wicket:container>
+	</div>
+	
+</div></div>
+
+<div id="content"><div>
+	<div id="lang">
+		<p><wicket:message key="TemplatePage.Lang.Choice"/>:</p>
+    	<ul>
+    		<li><a wicket:id="SelectFrenchLang" id="lang_fr">Français</a></li>
+    		<li><a wicket:id="SelectEnglishLang" id="lang_en">English</a></li>
+    	</ul>
+	</div>
+	
+	<h2><span wicket:id="PageTitleBody" /></h2>
+	<div wicket:id="FeedbackPageContainer">
+		<wicket:container wicket:id="FeedbackPage" />
+	</div>
+	<wicket:child />
+</div></div>
+
+<div id="footer">
+	<div class="f_base" style="height: 160px;">
+		<p class="titre">Cantharella - <wicket:message key="TemplatePage.Subtitle"/></p>
+		<p>
+			<a href="http://www.ird.fr/"><img style="float: right; margin-left:1.5rem;" src="images/ird.png" alt="IRD"></a>
+			<p style="margin-top:45px">
+				<a wicket:id="ContactPage"><wicket:message key="ContactPage" /></a> - <a wicket:id="ImprintPage"><wicket:message key="ImprintPage" /></a><br>
+				<wicket:message key="TemplatePage.Copyright" /> - <span wicket:id="Year" />
+			</p>
+		</p>
+	</div>
+</div>
+
+<div id="AjaxIndicator" style="display: none;"></div>
+
+</body>
+</html>

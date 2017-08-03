@@ -1,0 +1,106 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageDocumentPage.html 190 2013-03-27 15:21:42Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/document/ManageDocumentPage.html $
+  %%
+  Copyright (C) 2009 - 2013 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+    <form wicket:id="ManageDocumentPage.Form">
+    
+        <div class="property required">
+            <label for="Document.titre"><wicket:message key="Document.titre" /></label>
+            <input type="text" id="Document.titre" wicket:id="Document.titre" />
+        </div>
+        
+        <div class="property required">
+            <label for="Document.createur"><wicket:message key="Document.createur" /></label>
+            <select id="Document.createur" wicket:id="Document.createur" />
+            <a wicket:id="NewPersonne" class="add"><wicket:message key="ListPersonnesPage.NewPersonne" /></a>
+        </div>
+        
+        <div class="property required">
+            <label for="Document.dateCreation"><wicket:message key="Document.dateCreation" /></label>
+            <input type="text" id="Document.dateCreation" wicket:id="Document.dateCreation" />
+        </div>
+        
+        <div class="property required">
+            <label for="Document.editeur"><wicket:message key="Document.editeur" /></label>
+            <input type="text" id="Document.editeur" wicket:id="Document.editeur" />
+        </div>
+            
+        <div class="property">
+            <label for="Document.description"><wicket:message key="Document.description" /></label>
+            <textarea id="Document.description" wicket:id="Document.description"></textarea>
+        </div>
+
+        <div class="property">
+            <label for="Document.langue"><wicket:message key="Document.langue" /></label>
+            <select id="Document.langue" wicket:id="Document.langue" />
+        </div>
+        
+        <div class="property">
+            <label for="Document.contrainteLegale"><wicket:message key="Document.contrainteLegale" /></label>
+            <input type="text" id="Document.contrainteLegale" wicket:id="Document.contrainteLegale" />
+        </div>
+        
+        <div class="property required">
+            <label for="Document.ajoutePar"><wicket:message key="Document.ajoutePar" /></label>
+            <input type="text" id="Document.ajoutePar" wicket:id="Document.ajoutePar" />
+        </div>
+
+        <fieldset>
+            <legend><wicket:message key="Document.typeDocument" /></legend>
+
+            <div class="property required">
+                <label for="Document.typeDocument"><wicket:message key="TypeDocument.nom" /></label>
+                <select id="Document.typeDocument" wicket:id="TypeDocument.nom" />
+            </div>
+
+            <div class="property">
+                <label for="TypeDocument.domaine"><wicket:message key="TypeDocument.domaine" /></label>
+                <span class="quote" id="TypeDocument.domain" wicket:id="TypeDocument.domaine" />
+            </div>
+
+            <div class="property">
+                <label for="TypeDocument.description"><wicket:message key="TypeDocument.description" /></label>
+                <span class="quote" id="TypeDocument.description" wicket:id="TypeDocument.description" />
+            </div>
+        </fieldset>
+        
+        <div class="property required">
+            <label for="Document.file"><wicket:message key="Document.file" />
+            <wicket:container wicket:id="Document.file.info"/></label>
+            <input type="file" id="Document.file" wicket:id="Document.file" />
+        </div>
+    
+        <div class="actions">
+            <input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+            <input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+            <input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+            <a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+        </div>
+    </form>
+
+</wicket:extend>
+</body>
+</html>

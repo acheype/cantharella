@@ -1,0 +1,150 @@
+<!--
+  #%L
+  Cantharella :: Web
+  $Id: ManageExtractionPage.html 149 2013-02-21 17:16:19Z echatellier $
+  $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.web/src/main/java/nc/ird/cantharella/web/pages/domain/extraction/ManageExtractionPage.html $
+  %%
+  Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
+  %%
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Affero General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU Affero General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  #L%
+  -->
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:extend>
+
+	<form wicket:id="Form">
+
+	<div class="property required">
+		<label for="Extraction.ref"><wicket:message key="Extraction.ref" /></label>
+		<input type="text" id="Extraction.ref" wicket:id="Extraction.ref" />
+	</div>
+
+	<div class="property required">
+		<label for="Extraction.manipulateur"><wicket:message key="Extraction.manipulateur" /></label>
+		<select id="Extraction.manipulateur" wicket:id="Extraction.manipulateur" />
+		<a wicket:id="NewPersonne" class="add"><wicket:message key="ListPersonnesPage.NewPersonne" /></a>
+	</div>
+	
+	<div class="property required">
+		<label for="Extraction.date"><wicket:message key="Extraction.date" /></label>
+		<input type="text" id="Extraction.date" wicket:id="Extraction.date" />
+	</div>
+
+	<div class="property required">
+		<label for="Extraction.lot"><wicket:message key="Extraction.lot" /></label>
+		<select id="Extraction.lot" wicket:id="Extraction.lot" />
+		<a wicket:id="NewLot" class="add"><wicket:message key="ListLotsPage.NewLot" /></a>
+	</div>
+	
+	<div class="property">
+		<label for="Extraction.masseDepart"><wicket:message key="Extraction.masseDepart" /></label>
+		<input type="text" id="Extraction.masseDepart" wicket:id="Extraction.masseDepart" />
+	</div>
+	
+	<div class="property">
+		<label for="Extraction.complement"><wicket:message key="Extraction.complement" /></label>
+		<textarea id="Extraction.complement" wicket:id="Extraction.complement"></textarea>
+	</div>
+	
+	<div class="property required">
+		<label for="Extraction.createur"><wicket:message key="Extraction.createur" /></label>
+		<input type="text" id="Extraction.createur" wicket:id="Extraction.createur" disabled="disabled"/>
+	</div>
+	
+	<fieldset>
+			<legend><wicket:message key="Extraction.methode" /></legend>
+			<div class="property required">
+				<label for="Extraction.methode.nom"><wicket:message key="MethodeExtraction.nom" /></label>
+				<select id="Extraction.methode.nom" wicket:id="Extraction.methode.nom" />
+			</div>
+			<div class="property" wicket:id="TestBio.descriptionMethodeCont">
+				<span class="label"><wicket:message key="MethodeExtraction.description" /></span>
+				<span class="quote" id="Extraction.methode.description" wicket:id="Extraction.methode.description"/>
+			</div>
+	</fieldset>
+	
+	<fieldset>
+		<legend><wicket:message key="Extraction.extraits" /></legend>
+		<table cellspacing="0" wicket:id="Extraction.extraits.Table">
+			<thead>
+				<tr>
+					<th class="required">
+						<label for="Extraction.extraits.List.typeExtrait"><wicket:message key="Extrait.typeExtrait" /></label>
+					</th>
+					<th class="required">
+						<label for="Extraction.extraits.List.ref"><wicket:message key="Extrait.ref" /></label>
+					</th>
+					<th>
+						<label for="Extraction.extraits.List.masseObtenue"><wicket:message key="Extrait.masseObtenue" /></label>
+					</th>
+					<th>
+						<label for="Extraction.extraits.List.rendement"><wicket:message key="Extrait.rendement" /></label>
+					</th>
+					<th><wicket:message key="Actions" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="Extraction.extraits.List">
+					<td>
+						<span wicket:id="Extraction.extraits.List.typeExtrait" /><wicket:container wicket:id="Extraction.extraits.List.typeExtrait.info"/>
+					</td>
+					<td>
+						<span wicket:id="Extraction.extraits.List.ref" />
+					</td>
+					<td>
+						<span wicket:id="Extraction.extraits.List.masseObtenue" />
+					</td>
+					<td>
+						<span wicket:id="Extraction.extraits.List.rendement" />
+					</td>
+					<td>
+						<input wicket:id="Extraction.extraits.List.Delete" type="submit" wicket:message="value:Delete" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<select class="tiny" id="Extraction.extraits.typeExtrait" wicket:id="Extraction.extraits.typeExtrait" /><span wicket:id="Extraction.extraits.typeExtrait.info"/>
+					</td>
+					<td>
+						<input type="text" id="Extraction.extraits.ref" wicket:id="Extraction.extraits.ref" />
+					</td>
+					<td>
+						<input type="text" id="Extraction.extraits.masseObtenue" wicket:id="Extraction.extraits.masseObtenue" />
+					</td>
+					<td>
+					</td>
+					<td>
+						<input wicket:id="Extraction.extraits.Add" type="submit" wicket:message="value:Add" />
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+
+    <wicket:panel wicket:id="ManageListDocumentsPanel" />
+
+	<div class="actions">
+		<input type="submit" wicket:message="value:Submit" wicket:id="Create" />
+	 	<input type="submit" wicket:message="value:Submit" wicket:id="Update" />
+	 	<input type="submit" wicket:message="value:Delete" wicket:id="Delete" class="warning" />
+	 	<a wicket:id="Cancel"><wicket:message key="Cancel" /></a>
+	</div>
+		
+	</form>
+
+</wicket:extend>
+</body>
+</html>
