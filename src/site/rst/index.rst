@@ -1,7 +1,7 @@
 .. -
 .. * #%L
 .. * Cantharella
-.. * $Id: index.rst 277 2017-08-03 01:32:51Z acheype $
+.. * $Id: index.rst 278 2017-08-03 03:12:39Z acheype $
 .. * $HeadURL: https://svn.codelutin.com/cantharella/trunk/src/site/rst/index.rst $
 .. * %%
 .. * Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)

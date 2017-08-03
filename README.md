@@ -1,7 +1,6 @@
 # Cantharella
 
-*The GitHub repository in only a mirror of [the one hosted by Code Lutin](https://forge.codelutin
-.com/projects/cantharella).*
+*The GitHub repository in only a mirror of [the one hosted by Code Lutin](https://forge.codelutin.com/projects/cantharella).*
 
 The information system (IS) Cantharella: Pharmacochemical database of natural substances, designed and developed by 
 IRD (www.ird.fr), share and sustain pharmacochemical data of all organisms collected for the study of their natural
