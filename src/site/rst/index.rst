@@ -22,7 +22,7 @@
 .. -
 
 
-.. image:: images/cantharella_with_title.jpg
+.. image:: ../resources/images/cantharella_with_title.jpg
 
 Description
 -----------
@@ -47,19 +47,19 @@ Features
 Screenshots
 -----------
 
-.. figure:: images/Home.jpg
+.. figure:: ../resources/images/Home.jpg
 
 Home
 
-.. figure:: images/Station.jpg
+.. figure:: ../resources/images/Station.jpg
 
 Location form
 
-.. figure:: images/Extraction.jpg
+.. figure:: ../resources/images/Extraction.jpg
 
 Extraction form
 
-.. figure:: images/Molecule.jpg
+.. figure:: ../resources/images/Molecule.jpg
 
 Molecule form
 

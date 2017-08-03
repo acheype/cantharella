@@ -81,7 +81,7 @@ path is */opt/tomcat*, then do::
 
 Then, you have to configure your Cantharella instance as described in this section_.
 
-.. _section: configuration.html
+.. _section: configuration.rst
 
 After the configuration step, you can restart your tomcat server, read the logs in the */opt/tomcat/logs* directory and verify that they
 don't contain any errors. By default, the application logs will be in the *cantharella.log* file.
