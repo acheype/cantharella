@@ -1,4 +1,12 @@
 ######################
+# Project specific
+######################
+cantharella.data/target/**
+cantharella.service/target/**
+cantharella.utils/target/**
+cantharella.web/target/**
+
+######################
 # Node
 ######################
 /node/**
