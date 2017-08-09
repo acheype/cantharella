@@ -1,0 +1,28 @@
+version: '3'
+services:
+    tomcat:
+        container_name: cantharella-web
+        image: acheype/cantharella-web:1.2.2
+        ports:
+            - "80:8080"
+        links:
+            - "postgres"
+        env_file: ./cantharella-web.env
+        # please define the variable DB.PASSWORD in the cantharella-db.env file. You can also define other variables
+        # of the configuration file (see the documentation file /src/site/rst/configuration.rst for more details)
+        # example of the environment file content :
+        # DB.PASSWORD=ctrl4
+
+    postgres:
+        container_name: cantharella-db
+        image: acheype/cantharella-db:1.2
+        volumes:
+            - /data/postgresql:/var/lib/postgresql/data
+        ports:
+            - "5432:5432"
+        env_file: ./cantharella-db.env
+        # please define the variables POSTGRES_PASSWORD and CANTHARELLA_PASSWORD (same value as DB.PASSWORD) in the
+        # cantharella-db .env file
+        # example of the environment file content :
+        # POSTGRES_PASSWORD=postgres
+        # CANTHARELLA_PASSWORD=ctrl4

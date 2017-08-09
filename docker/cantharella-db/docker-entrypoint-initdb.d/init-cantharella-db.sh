@@ -10,9 +10,8 @@ set -e
 trap onexit EXIT
 
 echo "--- Init Cantharella DB ---"
-echo "$SCRIPT_DIR"
 echo "No 'cantharella' database found. The database is going to be created."
-psql --username "$POSTGRES_USER" -f "$SCRIPT_DIR/sql/create_db.sql"
+psql --username "$POSTGRES_USER" --set=cantharella_password=$CANTHARELLA_PASSWORD -f "$SCRIPT_DIR/sql/create_db.sql"
 echo "* create_db.sql imported *"
 psql --username cantharella -d cantharella -f $SCRIPT_DIR/sql/cantharella_schema_1.2.sql
 echo "* cantharella_schema_1.2.sql imported *"

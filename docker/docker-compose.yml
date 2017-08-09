@@ -18,4 +18,6 @@ services:
         ports:
             - "5432:5432"
         environment:
-            - POSTGRES_PASSWORD=CHANGE_PASSWORD
+            - POSTGRES_PASSWORD=postgres
+            # password of the user cantharella, only useful for db creation (if no data in /data/postgresql)
+            - CANTHARELLA_PASSWORD=ctrl4

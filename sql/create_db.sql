@@ -1,8 +1,8 @@
 ---
 -- #%L
 -- Cantharella :: Data
--- $Id: create_db.sql 133 2013-02-19 11:02:25Z acheype $
--- $HeadURL: https://svn.codelutin.com/cantharella/trunk/cantharella.data/src/main/sql/create_db.sql $
+-- $Id: create_db.sql 279 2017-08-09 07:34:34Z acheype $
+-- $HeadURL: https://svn.codelutin.com/cantharella/trunk/sql/create_db.sql $
 -- %%
 -- Copyright (C) 2009 - 2012 IRD (Institut de Recherche pour le Developpement) and by respective authors (see below)
 -- %%
@@ -20,7 +20,7 @@
 -- along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -- #L%
 ---
-CREATE ROLE cantharella LOGIN PASSWORD 'ctrl4';
+CREATE ROLE cantharella LOGIN PASSWORD :'cantharella_password';
 CREATE DATABASE cantharella WITH ENCODING='UTF8' OWNER=cantharella;
 GRANT ALL ON DATABASE cantharella TO cantharella;
 \connect cantharella
