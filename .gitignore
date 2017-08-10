@@ -4,9 +4,11 @@
 cantharella.data/target/**
 cantharella.service/target/**
 cantharella.utils/target/**
-cantharella.web/target/**
-docker/cantharella-db.env
-docker/cantharella-web.env
+cantharella.web/target/
+docker/dev/cantharella-db/docker-entrypoint-initdb.d/sql/**
+docker/dev/cantharella-web/cantharella.war
+docker/prod/cantharella-db.env
+docker/prod/cantharella-web.env
 
 ######################
 # Node

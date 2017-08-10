@@ -11,7 +11,7 @@ and purification methods needed and the biological tests performed.
 
 Cantharella is an open source information system based on Java components and a PostgreSQL database.
 
-***News from 2017-08:***The application have been dockerized. See [Deployment with Docker](#deployment-with-docker)
+**News from 2017-08:**The application have been dockerized. See [Deployment with Docker](#deployment-with-docker)
 section.
 
 More info on the project, [here](src/site/rst/index.rst).
@@ -69,27 +69,27 @@ Please first install Docker CE (Community Edition) and Docker Compose by followi
 
 #### Building
 
-First construct the war from the project sources with mvn (from the project root)
+First, from the project root, construct the war from the project sources with mvn :
 
     mvn clean package
 
-Then copy this war and the sql scripts (if needed, replace the version number)
+Then copy this war and the sql scripts (if needed, replace the version number) :
 
-    cp cantharella.web/target/cantharella-1.2.2.war docker/cantharella-web/cantharella.war
-    cp -R sql docker/cantharella-db/docker-entrypoint-initdb.d
+    cp cantharella.web/target/cantharella-1.2.2.war docker/dev/cantharella-web/cantharella.war
+    cp -R sql docker/dev/cantharella-db/docker-entrypoint-initdb.d
 
-Then build the images (cantharella.db and cantharella.web)
+Then build the project images (`cantharella-db` and `cantharella-web` at the same time)
 
-    cd docker
+    cd docker/dev
     docker-compose build
 
 #### Starting the application
 
-Go into the docker directory and launch the application with the docker-compose command :
+Go into the `docker/dev` directory and launch the application with the docker-compose command :
 
     docker-compose up
 
-Then, you can verify the status of the two containers (cantharella.db and cantharella.web) :
+Then, you can verify the status of the two containers (`cantharella-db` and `cantharella-web`) :
 
     docker ps
 
@@ -99,14 +99,14 @@ To stop properly the application (with the delete of the containers), execute th
 
 ### In production environment
 
-### Starting the application
+#### Starting the application
 
-In the production environment, the compose configuration file is the `docker-compose-prod.yml` in the docker directory.
+In the production environment, the compose configuration file is in the `docker/prod` directory.
 
-Only this file is needed to start the application, the two containers (cantharella.db and cantharella.web) are
-created from version-tagged image downloaded from the Docker Hub.
+Only this file is needed to start the application, the two containers, `cantharella.db` and `cantharella.web`, are
+created from the version-tagged image downloaded from the Docker Hub.
 
-First next to the `docker-compose-prod.yml`, create two config files necessary to define your passwords. The first one
+First next to the `docker-compose-prod.yml`, create two config files needed to define your passwords. The first one
 `cantharella-db.env` must have this content :
 
     POSTGRES_PASSWORD=thePasswordForTheAdminCountOfTheDB
@@ -117,13 +117,28 @@ And the second one `cantharella-web.env` has this one :
     DB.PASSWORD=thePasswordOfTheCantharellaUserUsedConnectingTheWebAppToTheDB
 
 In the latter, you can also define other variables of the web application configuration file (see the documentation
-file /src/site/rst/configuration.rst for more details).
+file `/src/site/rst/configuration.rst` for more details).
 
 When the configuration file are set, you can launch the application with the docker-compose command :
 
-    docker-compose -f docker-compose-prod.yml
+    docker-compose up
 
-### Autostart using Systemd
+As with the dev environment, you can verify the status of the containers with `docker ps` and stop properly the
+application with `docker-compose down`.
+
+The database data will be stored in the directory `/data/postgres`. If this location refer to an existing postgres
+data directory, the application expects that a cantharella database already exists. However, the container will
+create a new postgres directory and init an empty cantharella database.
+
+If needed, it's possible to modify the postgres data directory location by changing in the `docker-compose.yml` the
+part before `:` in that section :
+
+```
+volumes:
+    - /data/postgresql:/var/lib/postgresql/data
+```
+
+#### Autostart using Systemd
 
 For linux system which rely on systemd, the followed configuration will automatically execute a Cantharella service
 at system startup.
@@ -145,7 +160,7 @@ ExecStop=/usr/local/bin/docker-compose -f /data/cantharella.git/docker/docker-co
 [Install]
 WantedBy=multi-user.target
 ```
-(adapt the path for the docker-compose.yml according to your situation)
+(adapt the path for the `docker-compose.yml` according to your situation)
 
 Then enable the start at startup :
 
