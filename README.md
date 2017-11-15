@@ -20,6 +20,12 @@ More info on the project, [here](src/site/rst/index.rst).
 
 ![](src/site/resources/images/Molecule.jpg)
 
+**Credits
+  - Authors of the database : Sylvain PETEK, Adrien CHEYPE
+  - Development : Adrien CHEYPE, Mickael TRICOT, Alban DIGUER, Benjamin POUSSIN, Éric CHATELLIER
+  - Graphic design : Elise COSTE, Adrien CHEYPE
+  - Logo : Fabrice CHARLEUX
+  
 ### License
 
 Cantharella is distributed under the terms of the under the terms of the GNU General Public License, version 3.0. The 
