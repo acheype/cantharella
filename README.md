@@ -11,7 +11,7 @@ and purification methods needed and the biological tests performed.
 
 Cantharella is an open source information system based on Java components and a PostgreSQL database.
 
-**News from 2017-08:**The application have been dockerized. See [Deployment with Docker](#deployment-with-docker)
+**News from 2017-08:** The application have been dockerized. See [Deployment with Docker](#deployment-with-docker)
 section.
 
 More info on the project, [here](src/site/rst/index.rst).
@@ -20,7 +20,7 @@ More info on the project, [here](src/site/rst/index.rst).
 
 ![](src/site/resources/images/Molecule.jpg)
 
-**Credits
+**Credits**
   - Authors of the database : Sylvain PETEK, Adrien CHEYPE
   - Development : Adrien CHEYPE, Mickael TRICOT, Alban DIGUER, Benjamin POUSSIN, Éric CHATELLIER
   - Graphic design : Elise COSTE, Adrien CHEYPE
