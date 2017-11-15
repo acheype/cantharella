@@ -19,8 +19,8 @@ More info on the project, [here](src/site/rst/index.rst).
 ![](src/site/resources/images/Home.jpg)
 
 ![](src/site/resources/images/Molecule.jpg)
-
-**Credits**
+  
+### Credits
   - Authors of the database : Sylvain PETEK, Adrien CHEYPE
   - Development : Adrien CHEYPE, Mickael TRICOT, Alban DIGUER, Benjamin POUSSIN, Éric CHATELLIER
   - Graphic design : Elise COSTE, Adrien CHEYPE
