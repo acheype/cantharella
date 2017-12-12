@@ -137,7 +137,7 @@ data directory, the application expects that a cantharella database already exis
 create a new postgres directory and init an empty cantharella database.
 
 If needed, it's possible to modify the postgres data directory location by changing in the `docker-compose.yml` the
-part before `':'` in that section :
+part before '`:`' in that section :
 
 ```
 volumes:
