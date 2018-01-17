@@ -109,7 +109,7 @@ To stop properly the application (with the delete of the containers), execute th
 
 In the production environment, the compose configuration file is in the `docker/prod` directory.
 
-Only this file is needed to start the application, the two containers, `cantharella.db` and `cantharella.web`, are
+Only this file is needed to start the application, the two containers, `cantharella-db` and `cantharella-web`, are
 created from the version-tagged image downloaded from the Docker Hub.
 
 First next to the `docker-compose-prod.yml`, create two config files needed to define your passwords. The first one
